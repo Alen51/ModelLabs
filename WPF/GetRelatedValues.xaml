@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPF.GetRelatedValues"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="GetRelatedValues" Height="450" Width="800">
+    <Grid>
+        <Grid Background="#fff384" Height="56" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800">
+            <Button x:Name="buttonGetValues" Background="Transparent" Content="GetValues" BorderThickness="0" FontSize="25" FontFamily="Calibri" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="200" Height="40" Click="buttonGetValues_Click"/>
+            <Button x:Name="buttonGetExtentValues" Background="Transparent" Content="GetExtentValues" BorderThickness="0" FontSize="25" FontFamily="Calibri" HorizontalAlignment="Left" Margin="294,10,0,0" VerticalAlignment="Top" Width="200" Height="40" Click="buttonGetExtentValues_Click"/>
+            <Button x:Name="buttonGetRelatedValues" Background="Transparent" Content="GetRelatedValues" BorderThickness="0" FontSize="25" FontFamily="Calubri" HorizontalAlignment="Left" Margin="550,10,0,0" VerticalAlignment="Top" Width="200" Height="40" Click="buttonGetRelatedValues_Click"/>
+        </Grid>
+
+        <Label Content="Choose GID:" HorizontalAlignment="Left" FontSize="14" FontFamily="Calibri" Margin="31,61,0,0" VerticalAlignment="Top" Width="162"/>
+        <ComboBox Name="gidCmb" HorizontalAlignment="Left" SelectionChanged="gidCmb_SelectionChanged" Height="30" Margin="31,86,0,0" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="resultTb" VerticalScrollBarVisibility="Visible" IsEnabled="True" Height="436" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="374,73,10,0"/>
+
+        <Label Content="Choose association:" HorizontalAlignment="Left" FontSize="14" FontFamily="Calibri" Margin="31,121,0,0" VerticalAlignment="Top" Width="162"/>
+        <ComboBox Name="associationCmb" HorizontalAlignment="Left" SelectionChanged="associationCmb_SelectionChanged" Height="30" Margin="31,146,0,0" VerticalAlignment="Top" Width="190"/>
+
+        <Label Content="Choose type:" HorizontalAlignment="Left" FontSize="14" FontFamily="Calibri" Margin="31,177,0,0" VerticalAlignment="Top" Width="162"/>
+        <ComboBox Name="typeCmb" HorizontalAlignment="Left" SelectionChanged="typeCmb_SelectionChanged" Height="30" Margin="31,202,0,0" VerticalAlignment="Top" Width="190"/>
+
+        <Button x:Name="getRelatedValuesButton" Visibility="Hidden" Click="getRelatedValuesButton_Click" Content="Get" Background="#fff384" FontSize="17" FontFamily="Calibri" HorizontalAlignment="Left" Margin="239,202,0,0" VerticalAlignment="Top" Width="125" Height="30" />
+        <CheckBox x:Name="selectAllCheckBox" Visibility="Hidden" Click="selectAllCheckBox_Click" FontSize="14" FontFamily="Calibri" Content="Select all properties" HorizontalAlignment="Left" Height="22" Margin="31,244,0,0" VerticalAlignment="Top" Width="137"/>
+        <ListBox x:Name="propListBox" MinHeight="200" Visibility="Hidden"
+                 ScrollViewer.CanContentScroll="True"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                 SelectionMode="Multiple" Margin="31,271,450,10.4"/>
+    </Grid>
+</Window>
